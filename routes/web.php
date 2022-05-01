@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Rout::get('/locations/{id}', [\App\Http\Controllers\locationController::class, 'show']);
+
 Route::get('/', function () {
     return view('welcome');
 });
