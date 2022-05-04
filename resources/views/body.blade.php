@@ -24,9 +24,9 @@
 
         @yield('content')
 
-        <footer>
+        <!-- <footer>
             
-        </footer>
+        </footer> -->
     </body>
     
 @endsection
