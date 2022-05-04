@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LocationImagesVideosTable extends Migration
+class CreateLocationAvailabilityTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class LocationImagesVideosTable extends Migration
      */
     public function up()
     {
-        Schema::table('location', function (Blueprint $table) {
-            $table->string("image")->default("/image/noimage.png");
+        Schema::create('location_availability', function (Blueprint $table) {
+            $table->string("location");
+            $table->string("for");
+
+            $table->foreign("location")->references("address")->on("location");
         });
     }
 
@@ -25,8 +28,6 @@ class LocationImagesVideosTable extends Migration
      */
     public function down()
     {
-        Schema::table("location", function (Blueprint $table) {
-            $table->dropColumn("image");
-        });
+        Schema::dropIfExists('location_availability');
     }
 }
