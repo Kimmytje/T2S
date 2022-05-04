@@ -10,6 +10,6 @@ class KindOfAnimals extends Model
     protected $table = 'kind_of_animals';
 
     public function allAnimals(){
-        $this->hasMany('\App\Models\Animals', "kind", "kind");
+        return $this->hasMany('\App\Models\Animals', "kind", "kind");
     }
 }

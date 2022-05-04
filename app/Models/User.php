@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function myAnimals(){
+        return $this->hasMany('\App\Models\Animals', "owner", "accountID");
+    }
+
+    public function mylocations(){
+        return $this->hasMany('\App\Models\Location', "owner", "accountID");
+    }
+
+    public function mySearches(){
+        return $this->hasMany('\App\Models\Searching', "owner", "accountID");
+    }
 }
