@@ -16,19 +16,19 @@ class LocationMediaTableSeeder extends Seeder
     {
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',
-            'media' => '/media/locations/672_720x480.jpg'
+            'media' => '/media/672_720x480.jpg'
         ]);
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',
-            'media' => '/media/locations/673_360x240.jpg'
+            'media' => '/media/673_360x240.jpg'
         ]);
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',
-            'media' => '/media/locations/375_360x240.jpg'
+            'media' => '/media/375_360x240.jpg'
         ]);
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',
-            'media' => '/media/locations/676_360x240.jpg'
+            'media' => '/media/676_360x240.jpg'
         ]);
     }
 }

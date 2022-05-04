@@ -1,0 +1,93 @@
+:root {
+    --Lila: #E0DFEF;
+    --Yellow: #ebefe0;
+    --Pink: #E49EA8;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: inherit;
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+body {
+    font-size: 1.8rem;
+    background: var(--Yellow);
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    align-items: center;
+    flex-direction: column;
+}
+
+.material-icons {
+    cursor: default;
+
+    color: var(--Pink);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 10vh;
+
+    background: var(--Lila);
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+/* ~~ Top Navigation Bar ~~ */
+.logo{
+  float:left;
+}
+
+nav { 
+    height: 7rem;
+    width: 70%;
+    margin: auto;
+    text-align:center;
+}
+
+nav ul {
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+}
+
+nav li {
+    list-style-type: none;
+    height: 2.4rem;
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+    display: inline;
+}
+  
+nav li a {
+    color: black;
+    font-size: 1.6rem;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 7rem;
+    padding: .5rem 1.5rem;
+    opacity: 0.7;
+}
+
+main{
+    padding: 4rem;
+}

@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Rout::get('/locations/{id}', [\App\Http\Controllers\locationController::class, 'show']);
+Route::get('/locations', [\App\Http\Controllers\LocationController::class, 'showAll']);
+Route::get('/locations/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\MainController::class, 'show']);
