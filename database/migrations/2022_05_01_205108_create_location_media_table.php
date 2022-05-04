@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LocationImagesVideosTable extends Migration
+class CreateLocationMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -28,8 +28,10 @@ class LocationImagesVideosTable extends Migration
      */
     public function down()
     {
-        Schema::table("location", function (Blueprint $table) {
-            $table->dropColumn("image");
+        Schema::table('locaton_media', function (Blueprint $table) {
+            $table->dropForeign('location_media_location_foreign');
         });
+
+        Schema::dropIfExists('location_media');
     }
 }

@@ -28,6 +28,9 @@ class CreateLocationAvailabilityTable extends Migration
      */
     public function down()
     {
+        Schema::table('location_availability', function (Blueprint $table) {
+            $table->dropForeign('location_availability_location_foreign');
+        });
         Schema::dropIfExists('location_availability');
     }
 }
