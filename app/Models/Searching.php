@@ -16,4 +16,24 @@ class Searching extends Model
     public function searchingFor(){
         return $this->belongsTo('\App\Models\Animals', "for", "animalID");
     }
+
+    public function mediaAnimal(){
+        return $this->belongsTo('\App\Models\AnimalsMedia', "for", "animal");
+    }
+
+    public function mediaUser(){
+        return $this->belongsTo('\App\Models\UsersMedia', "owner", "user");
+    }
+
+    public function getTimeAgo($carbonObject) {
+        if($carbonObject == null){
+            return "1w ago";
+        }else{
+            return str_ireplace(
+                [' seconds', ' second', ' minutes', ' minute', ' hours', ' hour', ' days', ' day', ' weeks', ' week'], 
+                ['s', 's', 'm', 'm', 'h', 'h', 'd', 'd', 'w', 'w'], 
+                $carbonObject->diffForHumans()
+            );
+        }
+    }
 }

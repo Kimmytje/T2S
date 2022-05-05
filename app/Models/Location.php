@@ -13,7 +13,7 @@ class Location extends Model
         return $this->hasMany('\App\Models\LocationAvailability', "location", "address");
     }
 
-    public function media(){
+    public function searchMedia(){
         return $this->hasMany('\App\Models\LocationMedia', "location", "address");
     }
 

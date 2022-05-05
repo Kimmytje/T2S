@@ -19,8 +19,13 @@
 
                 <ul class="account-section">
                     <li class="btn btn-primary dropdown">
-                        {{$user->first()->name}}
+                        {{$user->first()->fName}}
                         <ul class="dropdown-content">
+                            <li>
+                                <figure>
+                                    <img src="/media/Users/Melissa.jpg" alt="User profile"  class="avatar">
+                                </figure>
+                            </li>
                             <li><a href="#"> My Account </a></li>
                             <li><a href="#"> My Animals </a></li>
                             <li><a href="#"> My Homes </a></li>

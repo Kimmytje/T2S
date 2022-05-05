@@ -15,7 +15,7 @@ class CreateLocationMediaTable extends Migration
     {
         Schema::create('location_media', function (Blueprint $table) {
             $table->string("location");
-            $table->string("media")->default("/media/noimage.png");
+            $table->string("media")->default("/media/Locations/noimage.png");
 
             $table->foreign("location")->references("address")->on("location");
         });
@@ -28,7 +28,7 @@ class CreateLocationMediaTable extends Migration
      */
     public function down()
     {
-        Schema::table('locaton_media', function (Blueprint $table) {
+        Schema::table('location_media', function (Blueprint $table) {
             $table->dropForeign('location_media_location_foreign');
         });
 

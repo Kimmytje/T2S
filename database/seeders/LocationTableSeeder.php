@@ -19,5 +19,10 @@ class LocationTableSeeder extends Seeder
             'city' => 'Haarlem',
             'owner' => 1,
         ]);
+        DB::table('location')->insert([
+            'address' => 'Bloemerstraat 94',
+            'city' => 'Nijmwege',
+            'owner' => 2,
+        ]);
     }
 }

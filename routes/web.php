@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/locations', [\App\Http\Controllers\LocationController::class, 'showAll']);
 Route::get('/locations/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
 
-Route::get('/', [\App\Http\Controllers\MainController::class, 'show']);
+Route::get('/home', [\App\Http\Controllers\MainController::class, 'show']);
+Route::get('/', );

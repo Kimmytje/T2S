@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function mySearches(){
         return $this->hasMany('\App\Models\Searching', "owner", "accountID");
     }
+
+    public function searchMedia(){
+        return $this->hasMany('\App\Models\UsersMedia', "user", "accountID");
+    }
 }

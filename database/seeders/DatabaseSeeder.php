@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             AnimalsTableSeeder::class,
             LocationTableSeeder::class,
             LocationMediaTableSeeder::class,
+            AnimalsMediaTableSeeder::class,
+            UserMediaTableSeeder::class,
             LocationAvailabilityTableSeeder::class,
             SearchingTableSeeder::class,
         ]);

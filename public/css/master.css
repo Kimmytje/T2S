@@ -4,6 +4,8 @@
     --Pink: #E49EA8;
     --Purple: 104, 85, 224;
     --header-height: 10vh;
+    --surface-color: #fff;
+    --curve: 40;
 }
 
 /* ----------- General ----------- */
@@ -166,8 +168,9 @@ nav > ul > li > a {
 
     display: block;
 
-    min-width: 15ch;
-    margin: 1.1rem;
+    max-width: 14.7rem;
+    margin: 1rem;
+    padding-top: .5rem;
 
     transition: 280ms all 100ms ease-out;
     transform: rotateX(-90deg);
@@ -207,8 +210,8 @@ nav > ul > li > a:focus-within:before,
     opacity: 1;
 }
 
-.dropdown-content > li:hover,
-.dropdown-content > li:focus-within {
+.dropdown-content > li > a:hover,
+.dropdown-content > li > a:focus-within {
     color: white;
     background-color: black;
 }
@@ -269,12 +272,12 @@ nav > ul > li > a::before {
 .btn:hover {
     color: white;
     background-color: rgba(var( --Purple) , 1);
-    box-shadow: 0 0 20px rgba(var( --Purple) , 0.6);
+    box-shadow: 0 0 2rem rgba(var( --Purple) , 0.6);
 }
 
 .btn-primary {
     color: var(--Purple);
-    border: 1px solid rgba(var( --Purple) , 1);
+    border: .1rem solid rgba(var( --Purple) , 1);
     background-color: rgba(255, 255, 255, 1);
 }
 
@@ -283,3 +286,137 @@ nav > ul > li > a::before {
     border: 0;
     background-color: rgba(var( --Purple) , 1);
 }
+
+/* ----------- Searching Cards ----------- */
+
+.cards {
+    display: grid;
+
+    margin: 4rem 5vw;
+    padding: 0;
+
+    list-style-type: none;
+
+    grid-template-columns: repeat(auto-fit, minmax( 30rem, 1fr) );
+    gap: 2rem;
+}
+
+.card {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    height: 100%;
+
+    text-decoration: none;
+
+    border-radius: calc(var( --curve) * .1rem);
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-overlay {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    transition: .2s ease-in-out;
+    transform: translateY(100%);
+
+    border-radius: calc(var( --curve) * .1rem);
+    background-color: var(--surface-color);
+}
+
+.card-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 2em;
+
+    transition: .2s ease-in-out;
+    transform: translateY(-100%);
+
+    border-radius: calc(var( --curve) * .1rem) 0 0 0;
+    background-color: var(--surface-color);
+
+    gap: 2em;
+}
+
+.card-arc {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 100%;
+
+    width: 8rem;
+    height: 8rem;
+}
+
+.card-arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card-header {
+    transform: translateY(0);
+}
+
+.card-thumb,
+.avatar {
+    flex-shrink: 0;
+
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1em;
+
+    margin: 0 0 .3em;
+
+    color: #6A515E;
+}
+
+.card-status {
+    font-size: .8em;
+
+    color: var(--Pink);
+}
+
+.card-description {
+    font-family: "MockFlowFont";
+    font-size: 1.5rem;
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+
+    margin: 0;
+    padding: 0 2em 2em;
+
+    color: var(--Pink);
+
+    -webkit-line-clamp: 3;
+}
+
+.card:hover .card-overlay {
+    transform: translateY(0);
+}
+
+/* ----------- Filters ----------- */
+
+/* ----------- Login ----------- */
+
+/* ----------- Animations ----------- */
