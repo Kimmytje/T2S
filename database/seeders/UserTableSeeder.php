@@ -15,14 +15,12 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            "fName" => "Melissa",
-            "lName" => "Parker",
+            "name" => "Melissa",
             "email" => "smileymelly@gmail.com",
             "password" => "smileymelly",
         ]);
         DB::table('users')->insert([
-            "fName" => "Randy",
-            "lName" => "Reid",
+            "name" => "Randy",
             "email" => "randeid@gmail.com",
             "password" => "rr420",
         ]);
