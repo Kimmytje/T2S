@@ -15,9 +15,18 @@
                 <ul>
                     <li><a href="#">Homes</a></li>
                     <li><a href="#">Animals</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Get in Touch</a></li>
+                </ul>
+
+                <ul class="account-section">
+                    <li class="btn btn-primary dropdown">
+                        Account
+                        <ul class="dropdown-content">
+                            <li><a href="#"> My Account </a></li>
+                            <li><a href="#"> My Animals </a></li>
+                            <li><a href="#"> My Homes </a></li>
+                        </ul>
+                    </li>
+                    <li class="btn btn-secondary">Log out</li>
                 </ul>
             </nav>
         </header>
