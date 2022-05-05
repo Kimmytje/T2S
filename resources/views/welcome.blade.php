@@ -2,7 +2,7 @@
     {{"Passen Op Je Dier | Welcome"}}
 @endsection
 
-@extends('body')
+@extends('base')
 @section('content')
 
     <main>
