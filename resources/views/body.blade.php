@@ -19,11 +19,12 @@
 
                 <ul class="account-section">
                     <li class="btn btn-primary dropdown">
-                        Account
+                        {{$user->first()->name}}
                         <ul class="dropdown-content">
                             <li><a href="#"> My Account </a></li>
                             <li><a href="#"> My Animals </a></li>
                             <li><a href="#"> My Homes </a></li>
+                            <li><a href="#"> Switch Account </a></li>
                         </ul>
                     </li>
                     <li class="btn btn-secondary">Log out</li>
