@@ -17,7 +17,7 @@ class CreateUserMediaTable extends Migration
             $table->unsignedBigInteger("user");
             $table->string("media")->default("/media/Users/noimage.png");
 
-            $table->foreign("user")->references("accountID")->on("users");
+            $table->foreign("user")->references("id")->on("users");
         });
     }
 

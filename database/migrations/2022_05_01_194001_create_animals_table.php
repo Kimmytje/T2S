@@ -22,7 +22,7 @@ class CreateAnimalsTable extends Migration
             $table->longText("note");
 
             $table->foreign("kind")->references("kind")->on("kind_of_animals");
-            $table->foreign("owner")->references("accountID")->on("users");
+            $table->foreign("owner")->references('id')->on("users");
         });
     }
 

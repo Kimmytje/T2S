@@ -18,7 +18,7 @@ class CreateLocationTable extends Migration
             $table->string("city");
             $table->unsignedBigInteger("owner");
 
-            $table->foreign("owner")->references("accountID")->on("users");
+            $table->foreign("owner")->references("id")->on("users");
         });
     }
 
