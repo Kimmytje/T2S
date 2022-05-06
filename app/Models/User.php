@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
+        'username',
         'email',
         'password',
     ];
@@ -43,18 +45,14 @@ class User extends Authenticatable
     ];
 
     public function myAnimals(){
-        return $this->hasMany('\App\Models\Animals', "owner", "accountID");
+        return $this->hasMany('\App\Models\Animals', "owner", "id");
     }
 
     public function mylocations(){
-        return $this->hasMany('\App\Models\Location', "owner", "accountID");
+        return $this->hasMany('\App\Models\Location', "owner", "id");
     }
 
     public function mySearches(){
-        return $this->hasMany('\App\Models\Searching', "owner", "accountID");
-    }
-
-    public function searchMedia(){
-        return $this->hasMany('\App\Models\UsersMedia', "user", "accountID");
+        return $this->hasMany('\App\Models\Searching', "owner", "id");
     }
 }

@@ -10,7 +10,7 @@ use App\Models\Location;
 use App\Models\LocationMedia;
 use App\Models\Searching;
 use App\Models\User;
-use App\Models\UsersMedia;
+use Auth;
 
 class MainController extends Controller
 {
@@ -21,8 +21,7 @@ class MainController extends Controller
         $locations = Location::all();
         $locmedia = LocationMedia::all();
         $searching = Searching::all();
-        $user = User::all();
-        $usermedia = UsersMedia::all();
+        $user = Auth::user();
 
         return view('home', [
             'animals' => $animals,
@@ -32,7 +31,6 @@ class MainController extends Controller
             'locmedia' => $locmedia,
             'searching' => $searching,
             'user' => $user,
-            'usermedia' => $usermedia,
         ]);
     }
 }

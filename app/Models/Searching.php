@@ -10,7 +10,7 @@ class Searching extends Model
     protected $table = 'searching';
 
     public function searchRequester(){
-        return $this->belongsTo('\App\Models\User', "owner", "accountID");
+        return $this->belongsTo('\App\Models\User', "owner", "id");
     }
 
     public function searchingFor(){
@@ -22,7 +22,7 @@ class Searching extends Model
     }
 
     public function mediaUser(){
-        return $this->belongsTo('\App\Models\UsersMedia', "owner", "user");
+        return $this->belongsTo('\App\Models\User', "owner", "id");
     }
 
     public function getTimeAgo($carbonObject) {

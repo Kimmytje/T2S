@@ -25,6 +25,7 @@
 }
 
 html {
+    font-family: 'Comfortaa', cursive;
     font-size: 62.5%;
 
     box-sizing: inherit;
@@ -57,11 +58,6 @@ header {
     background: var(--Lila);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 header::before {
     position: absolute;
     z-index: 99;
@@ -77,6 +73,7 @@ header::before {
 }
 
 main {
+    width: 90%;
     padding: 4rem;
 }
 
@@ -103,9 +100,6 @@ nav {
 }
 
 ul {
-    display: flex;
-    flex-wrap: wrap;
-
     margin: 0;
     padding: 0;
 
@@ -125,7 +119,9 @@ ul > li {
 }
 
 nav > ul {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 nav > ul > li {
@@ -297,7 +293,7 @@ nav > ul > li > a::before {
 
     list-style-type: none;
 
-    grid-template-columns: repeat(auto-fit, minmax( 30rem, 1fr) );
+    grid-template-columns: repeat(auto-fit, 30rem);
     gap: 2rem;
 }
 
@@ -396,7 +392,6 @@ nav > ul > li > a::before {
 }
 
 .card-description {
-    font-family: "MockFlowFont";
     font-size: 1.5rem;
 
     display: -webkit-box;
@@ -416,6 +411,72 @@ nav > ul > li > a::before {
 }
 
 /* ----------- Filters ----------- */
+
+.filters {
+    font-size: 1.5rem;
+
+    float: left;
+
+    width: 20%;
+    margin: 0;
+    margin-right: 10rem;
+    padding: 2rem;
+
+    border-radius: 5%;
+    background: whitesmoke;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+.filters form {
+    display: inline-block;
+
+    width: 100%;
+    padding-bottom: 2.5rem;
+}
+
+.filters label {
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+    padding-top: 1rem;
+
+    text-decoration: none;
+
+    color: darkgray;
+}
+
+.filters label:hover {
+    text-decoration: none;
+
+    color: var(--Pink);
+}
+
+.border-bottom {
+    font-size: 2.5rem;
+
+    padding-bottom: 1rem;
+}
+
+.border-bottom:after {
+    display: block;
+
+    width: 70%;
+
+    content: ' ';
+
+    border: .1rem solid #d0d0d0;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    border-radius: .4rem;
+    -webkit-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, .05);
+    box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, .05);
+}
 
 /* ----------- Login ----------- */
 

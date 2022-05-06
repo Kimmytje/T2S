@@ -15,14 +15,19 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            "name" => "Melissa",
+            "firstname" => "Melissa",
+            "lastname" => "Parker",
+            "username" => "smileymelly",
             "email" => "smileymelly@gmail.com",
-            "password" => "smileymelly",
+            "password" => bcrypt("smileymelly"),
+            'media' => 'media/Users/Melissa.jpg',
         ]);
         DB::table('users')->insert([
-            "name" => "Randy",
+            "firstname" => "Randy",
+            "lastname" => "Reid",
+            "username" => "Randeid",
             "email" => "randeid@gmail.com",
-            "password" => "rr420",
+            "password" => bcrypt("rr420"),
         ]);
     }
 }

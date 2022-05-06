@@ -6,7 +6,7 @@
         
         <header>
             <nav>
-                <a href="{{'/'}}" class="logo">
+                <a href="/home" class="logo">
                     <figure>
                         <img src="/images/logo.png" alt=" logo">
                     </figure>
@@ -19,11 +19,11 @@
 
                 <ul class="account-section">
                     <li class="btn btn-primary dropdown">
-                        {{$user->first()->fName}}
+                        {{$user->username}}
                         <ul class="dropdown-content">
                             <li>
                                 <figure>
-                                    <img src="/media/Users/Melissa.jpg" alt="User profile"  class="avatar">
+                                    <img src="{{$user->media}}" alt="User profile"  class="avatar">
                                 </figure>
                             </li>
                             <li><a href="#"> My Account </a></li>
@@ -32,7 +32,10 @@
                             <li><a href="#"> Switch Account </a></li>
                         </ul>
                     </li>
-                    <li class="btn btn-secondary">Log out</li>
+                    <li class="btn btn-secondary"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </ul>
             </nav>
         </header>

@@ -18,6 +18,6 @@ class Location extends Model
     }
 
     public function ownedBy(){
-        return $this->belongsTo('\App\Models\User', "owner", "accountID");
+        return $this->belongsTo('\App\Models\User', "owner", "id");
     }
 }

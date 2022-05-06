@@ -13,14 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/locations', [\App\Http\Controllers\LocationController::class, 'showAll']);
-Route::get('/locations/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
+Route::middleware(['auth'])-> group(function() {
+    Route::get('/home', [\App\Http\Controllers\MainController::class, 'show']);
+
+    Route::get('/locations', [\App\Http\Controllers\LocationController::class, 'showAll']);
+    Route::get('/locations/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
+});
+
+Route::middleware(['auth', 'admin'])-> group(function() {
+    Route::get('/admin', function () {
+        return view('admin');
+    });
+});
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [\App\Http\Controllers\MainController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

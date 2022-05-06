@@ -1,4 +1,4 @@
-<article class="card" data-kind-of-animal="{{$search->searchingFor->kind}}">
+<article>
     <figure>
         <img src="{{$search->mediaAnimal->media}}" class="card-image" alt="Picture of the animal">
     </figure>
@@ -12,13 +12,13 @@
             </figure>
 
             <section class="card-headerText">
-                <h3 class="card-title"> {{$search->searchRequester->fName}} </h3>
+                <h3 class="card-title"> {{$search->searchRequester->firstname}} </h3>
                 <p class="card-status"> {{$search->getTimeAgo($search->created_at)}} </p>
             </section>
         </section>
 
         <section class="card-description">
-            <p><span class="material-icons">today</span> {{$search->from}} - {{$search->to}}</p>
+            <p><span class="material-icons">today</span> {{substr($search->from,0,-3)}} - {{substr($search->to,0,-3)}}</p>
             <p><span class="material-icons">sell</span> €{{$search->payment}}.-</p>
         </section>
     </section>
