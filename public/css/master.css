@@ -389,6 +389,18 @@ nav > ul > li > a::before {
     color: #6A515E;
 }
 
+.card-tagline {
+    font-family: "MockFlowFont";
+    font-size: .8em;
+
+    display: block;
+
+    margin: 0;
+    margin-bottom: .5rem;
+
+    color: #D7BDCA;
+}
+
 .card-status {
     font-size: .8em;
 

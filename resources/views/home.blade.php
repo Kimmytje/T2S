@@ -56,6 +56,12 @@
                     @include('./components/searching-cards')
                 </a>
             @endforeach
+
+            @foreach ($locations as $location)
+                <a href="/location/{{$location->id}}" class="card" data-for-what-animals="{{$location->whatAnimals->for}}">
+                    @include('./components/location-cards')
+                </a>
+            @endforeach
         </section>
     </main>
 

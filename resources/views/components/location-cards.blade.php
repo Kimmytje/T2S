@@ -12,8 +12,7 @@
             </figure>
 
             <section class="card-headerText">
-                <h3 class="card-title"> {{$search->searchRequester->firstname}} {{$search->searchRequester->lastname}}</h3>
-                <p class="card-tagline"> {{$search->searchingFor->name}} </p>
+                <h3 class="card-title"> {{$search->searchRequester->firstname}} </h3>
                 <p class="card-status"> {{$search->getTimeAgo($search->created_at)}} </p>
             </section>
         </section>
