@@ -50,20 +50,10 @@
             </section>
         </section>
 
-        <h2>Animals</h2>
         <section class="cards">
             @foreach ($searching as $search)
                 <a href="/searching/{{$search->id}}" class="card" data-kind-of-animal="{{$search->searchingFor->kind}}">
                     @include('./components/searching-cards')
-                </a>
-            @endforeach
-        </section>
-            
-        <h2>Homes</h2>
-        <section class="cards">
-            @foreach ($locations as $location)
-                <a href="/location/{{$location->address}}" class="card" data-for-what-animals="{{$location->address}}">
-                    @include('./components/location-cards')
                 </a>
             @endforeach
         </section>

@@ -13,8 +13,8 @@
                 </a>
 
                 <ul>
-                    <li><a href="#">Homes</a></li>
-                    <li><a href="#">Animals</a></li>
+                    <li><a href="/homes">Homes</a></li>
+                    <li><a href="/animals">Animals</a></li>
                 </ul>
 
                 <ul class="account-section">
@@ -29,7 +29,6 @@
                             <li><a href="#"> My Account </a></li>
                             <li><a href="#"> My Animals </a></li>
                             <li><a href="#"> My Homes </a></li>
-                            <li><a href="#"> Switch Account </a></li>
                         </ul>
                     </li>
                     <li class="btn btn-secondary"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

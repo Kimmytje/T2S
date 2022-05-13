@@ -16,20 +16,42 @@ class MainController extends Controller
 {
     public function show(){
         $animals = Animals::all();
-        $animalmeida = AnimalsMedia::all();
         $KOA = KindOfAnimals::all();
         $locations = Location::all();
-        $locmedia = LocationMedia::all();
         $searching = Searching::all();
         $user = Auth::user();
 
         return view('home', [
             'animals' => $animals,
-            'animalsmedia' => $animalmeida,
             'KOA' => $KOA,
             'locations' => $locations,
-            'locmedia' => $locmedia,
             'searching' => $searching,
+            'user' => $user,
+        ]);
+    }
+
+    public function showAnimals(){
+        $animals = Animals::all();
+        $KOA = KindOfAnimals::all();
+        $searching = Searching::all();
+        $user = Auth::user();
+
+        return view('animals', [
+            'animals' => $animals,
+            'KOA' => $KOA,
+            'searching' => $searching,
+            'user' => $user,
+        ]);
+    }
+
+    public function showHomes(){
+        $locations = Location::all();
+        $KOA = KindOfAnimals::all();    
+        $user = Auth::user();
+
+        return view('homes', [
+            'locations' => $locations,
+            'KOA' => $KOA,
             'user' => $user,
         ]);
     }

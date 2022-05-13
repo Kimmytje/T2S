@@ -24,7 +24,7 @@ class LocationMediaTableSeeder extends Seeder
         ]);
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',
-            'media' => '/media/Locations/375_360x240.jpg'
+            'media' => '/media/Locations/675_360x240.jpg'
         ]);
         DB::table('location_media')->insert([
             'location' => 'Prinses Beatrixplein 16',

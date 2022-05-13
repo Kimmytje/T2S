@@ -22,5 +22,5 @@ class LocationAvailabilityTableSeeder extends Seeder
             'location' => 'Prinses Beatrixplein 16',
             'for' => 'Cat'
         ]);
-    }
+    }   
 }

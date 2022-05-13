@@ -10,11 +10,15 @@ class Location extends Model
     protected $table = 'location';
 
     public function whatAnimals(){
-        return $this->hasMany('\App\Models\LocationAvailability', "address", "location");
+        return $this->hasMany('\App\Models\LocationAvailability', "location", "address");
     }
 
     public function searchMedia(){
-        return $this->hasMany('\App\Models\LocationMedia', "address", "location");
+        return $this->hasMany('\App\Models\LocationMedia', "location", "address");
+    }
+
+    public function mediaUser(){
+        return $this->belongsTo('\App\Models\User', "owner", "id");
     }
 
     public function ownedBy(){

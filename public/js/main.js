@@ -42,3 +42,34 @@ const filter = () => {
 document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
     checkbox.addEventListener('change', filter);
 });
+
+let thumbnails = document.getElementsByClassName("thumbnail")
+let activeImages = document.getElementsByClassName("thumbnail-active")
+
+console.log(thumbnails);
+console.log(activeImages);
+
+for (var i = 0; i < thumbnails.length; i++) {
+    thumbnails[i].addEventListener("mouseover", function () {
+
+        if (activeImages.length > 0) {
+            activeImages[0].classList.remove("thumbnail-active")
+        }
+
+        this.classList.add("thumbnail-active")
+        document.getElementById("featured").src = this.src;
+    })
+};
+
+// let buttonLeft = document.getElementById("slideLeft");
+// let buttonRight = document.getElementById("slideRight");
+
+// buttonLeft.addEventListener("click", function () {
+//     document.getElementsByClassName("slider")[0].scrollLeft -= 180;
+//     console.log("Go left!");
+// })
+
+// buttonRight.addEventListener("click", function () {
+//     document.getElementsByClassName("slider")[0].scrollLeft += 180;
+//     console.log("Go right!");
+// })

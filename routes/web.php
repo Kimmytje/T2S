@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])-> group(function() {
     Route::get('/home', [\App\Http\Controllers\MainController::class, 'show']);
+    Route::get('/homes', [\App\Http\Controllers\MainController::class, 'showHomes']);
+    Route::get('/animals', [\App\Http\Controllers\MainController::class, 'showAnimals']);
 
-    Route::get('/locations', [\App\Http\Controllers\LocationController::class, 'showAll']);
-    Route::get('/locations/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
+    Route::get('/location/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
+    Route::get('/searching/{id}', [\App\Http\Controllers\AnimalController::class, 'showSpecific']);
 });
 
 Route::middleware(['auth', 'admin'])-> group(function() {
