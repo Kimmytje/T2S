@@ -29,6 +29,9 @@
                             <li><a href="#"> My Account </a></li>
                             <li><a href="#"> My Animals </a></li>
                             <li><a href="#"> My Homes </a></li>
+                            @if ($user->role != 'user')
+                                <li><a href="/dashboard">Dashboard</a></li>
+                            @endif
                         </ul>
                     </li>
                     <li class="btn btn-secondary"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

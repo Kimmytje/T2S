@@ -57,7 +57,7 @@ for (var i = 0; i < thumbnails.length; i++) {
         }
 
         this.classList.add("thumbnail-active")
-        document.getElementById("featured").src = this.src;
+        document.getElementById("featured").style = "background-image: url(" + this.src + ");";
     })
 };
 

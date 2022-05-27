@@ -4,25 +4,25 @@
 
 @extends('body')
 @section('content')
-    <main class="house">
-        <section class="house-images">
-
-            <figure class="house-image">
-                <img id="featured-house" src="{{$allMedia->first()->media}}" alt="Picture of the home">
+    <main class="house" id="featured" style="background-image: url({{$allMedia->first()->media}});">
+        <section class="slides">
+            <figure class="slider">
+                @foreach ($allMedia as $media)
+                    <img class="@if ($loop->first) thumbnail-active @endif thumbnail" src="{{$media->media}}" alt="Picture of the home">
+                @endforeach
             </figure>
-
-            <section class="slides">
-                <figure class="slider">
-                    @foreach ($allMedia as $media)
-                        <img class="@if ($loop->first) thumbnail-active @endif thumbnail" src="{{$media->media}}" alt="Picture of the home">
-                    @endforeach
-                </figure>
-            </section>
         </section>
 
         <section class="house-information">
-            <h1>{{$address}}</h1>
-            <h4>{{$location->city}}</h4>
+            <section class="house-informationL">
+                <h1>{{$address}}</h1>
+                <h4>{{$location->city}}</h4>
+
+                <button class="btn btn-primary">
+                    Vraag oppas aan!
+                </button>
+            </section>
+            
 
             <ul class="filter-container">
                 @if ($location->whatAnimals != "[]")

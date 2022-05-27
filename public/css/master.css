@@ -19,7 +19,10 @@
 }
 
 .material-icons {
+    font-size: 1.8rem !important;
+
     cursor: default;
+    vertical-align: bottom;
 
     color: var(--Pink);
 }
@@ -269,6 +272,7 @@ nav > ul > li > a::before {
     font-size: 1.4rem;
 
     width: 6rem;
+    height: 2.5rem;
     margin: .5rem .2rem;
     padding: .5rem;
 
@@ -702,45 +706,49 @@ h6 {
 
 .house,
 .animal {
-    display: grid;
+    overflow: hidden;
 
-    padding: 4rem;
+    width: 100vw;
+    height: 75vh;
 
-    grid-template-columns: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.animal {
+    background-position: center;
+    background-size: 60% 100%;
 }
 
 .slides {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 15vh;
+}
+
+.slider {
     display: flex;
-    align-items: center;
+    overflow: auto;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
 
-    max-width: 100%;
-    max-height: 100%;
+    width: 50%;
+    height: 100%;
+    margin: auto;
 
-    grid-area: slider;
-}
-
-.house-image,
-.animal-image {
-    width: 90%;
-}
-
-#featured {
-    width: 100%;
-
-    border: 2px solid black;
-
-    object-fit: cover;
+    white-space: nowrap;
 }
 
 .thumbnail {
-    max-width: 10%;
-    max-height: 10%;
     margin: 5px;
 
     cursor: pointer;
 
     opacity: 50%;
-    border: 2px solid black;
 
     object-fit: cover;
 }
@@ -754,17 +762,56 @@ h6 {
     opacity: 1;
 }
 
-.slider {
+.house-information,
+.animal-information {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+
     display: flex;
-    overflow: auto;
-    overflow-x: hidden;
-    flex-wrap: nowrap;
 
-    width: 90%;
+    width: 30vw;
+    height: 20vh;
 
-    white-space: nowrap;
+    background-color: var(--Pink);
 }
 
-.filter-container {
+.house-informationL,
+.animal-informationL {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.house-informationL > h4,
+.animal-informationL > h4 {
+    opacity: 50%;
+}
+
+.house-informationL > .btn,
+.animal-informationL > .btn {
+    position: absolute;
+    right: 10%;
+    bottom: 2rem;
+
+    width: 80%;
+    margin: auto;
+}
+
+.filter-container,
+.animal-notes {
     display: flex;
+
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+
+    color: white;
+    background-color: black;
+}
+
+.animal-informationL .material-icons {
+    color: black;
 }

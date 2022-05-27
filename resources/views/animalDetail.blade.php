@@ -4,28 +4,32 @@
 
 @extends('body')
 @section('content')
-    <main class="animal">
-        <section class="animal-images">
+    <main class="animal" id="featured" style="background-image: url({{$allMedia->first()->media}});">
 
-            <figure class="animal-image">
-                <img id="featured" src="{{$allMedia->first()->media}}" alt="Picture of the home">
+        <section class="slides">
+            <figure class="slider">
+                @foreach ($allMedia as $media)
+                    <img class="@if ($loop->first) thumbnail-active @endif thumbnail" src="{{$media->media}}" alt="Picture of the home">
+                @endforeach
             </figure>
-
-            <section class="slides">
-                <figure class="slider">
-                    @foreach ($allMedia as $media)
-                        <img class="@if ($loop->first) thumbnail-active @endif thumbnail" src="{{$media->media}}" alt="Picture of the home">
-                    @endforeach
-                </figure>
-            </section>
         </section>
 
         <section class="animal-information">
-            <h1>{{$animal->name}}</h1>
-            <h4>{{$animal->age}} years old</h4>
+            <section class="animal-informationL">
+                <h1>{{$animal->name}}</h1>
+                <h4>{{$animal->age}} years old</h4>
 
+                <p><span class="material-icons">today</span> from: to:</p>
+                <p><span class="material-icons">sell</span> €.-</p>
+
+                
+
+                <button class="btn btn-primary">
+                    Pas op {{$animal->name}}!
+                </button>
+            </section>
             
-            <p classe="animal-notes">{{$animal->note}}</p>
+            <p class="animal-notes">{{$animal->note}}</p>
         </section>
 
     </main>
