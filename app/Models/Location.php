@@ -17,6 +17,10 @@ class Location extends Model
         return $this->hasMany('\App\Models\LocationMedia', "location", "address");
     }
 
+    public function findReviews(){
+        return $this->hasMany('\App\Models\Reviews', "location", "address");
+    }
+
     public function mediaUser(){
         return $this->belongsTo('\App\Models\User', "owner", "id");
     }

@@ -48,7 +48,7 @@ class User extends Authenticatable
         return $this->hasMany('\App\Models\Animals', "owner", "id");
     }
 
-    public function mylocations(){
+    public function myHomes(){
         return $this->hasMany('\App\Models\Location', "owner", "id");
     }
 

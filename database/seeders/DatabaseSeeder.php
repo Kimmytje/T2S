@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             AnimalsMediaTableSeeder::class,
             LocationAvailabilityTableSeeder::class,
             SearchingTableSeeder::class,
+            ReviewsTableSeeder::class,
         ]);
     }
 }

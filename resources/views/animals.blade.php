@@ -23,7 +23,7 @@
                         </label>
                     @endforeach
                 </form>
-
+                <!-- 
                 <h6>Payment</h6>
                 <form>
                     <label>
@@ -47,6 +47,7 @@
                         50 + 
                     </label>
                 </form>
+                -->
             </section>
         </section>
 

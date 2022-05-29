@@ -18,18 +18,21 @@
             <section class="animal-informationL">
                 <h1>{{$animal->name}}</h1>
                 <h4>{{$animal->age}} years old</h4>
+                <p><span class="material-icons">today</span> from: {{substr($search->from,0,-3)}}</p>
+                <p>to: {{substr($search->to,0,-3)}}</p>
+                <p><span class="material-icons">sell</span> €{{$search->payment}}.-</p>
 
-                <p><span class="material-icons">today</span> from: to:</p>
-                <p><span class="material-icons">sell</span> €.-</p>
-
-                
 
                 <button class="btn btn-primary">
                     Pas op {{$animal->name}}!
                 </button>
             </section>
+
+            <section class="animal-informationR">
+                <h4>Notes:</h4>
+                <p class="animal-notes">{{$animal->note}}</p>
+            </section>
             
-            <p class="animal-notes">{{$animal->note}}</p>
         </section>
 
     </main>

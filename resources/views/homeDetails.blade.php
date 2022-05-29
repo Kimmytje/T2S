@@ -5,6 +5,7 @@
 @extends('body')
 @section('content')
     <main class="house" id="featured" style="background-image: url({{$allMedia->first()->media}});">
+
         <section class="slides">
             <figure class="slider">
                 @foreach ($allMedia as $media)
@@ -19,22 +20,36 @@
                 <h4>{{$location->city}}</h4>
 
                 <button class="btn btn-primary">
-                    Vraag oppas aan!
+                    Maak afspraak!
                 </button>
             </section>
-            
 
-            <ul class="filter-container">
-                @if ($location->whatAnimals != "[]")
-                    @foreach ($location->whatAnimals as $whatAnimals)
-                        <li class="filter-btn btn-secondary">
-                                {{$whatAnimals->for}}
-                        </li>
-                    @endforeach
-                @else
-                    <li>Any</li>
-                @endif
-            </ul>
+            <section class="house-informationR">
+                <ul class="filter-container">
+                    @if ($location->whatAnimals != "[]")
+                        @foreach ($location->whatAnimals as $whatAnimals)
+                            <li class="filter-btn btn-secondary">
+                                    {{$whatAnimals->for}}
+                            </li>
+                        @endforeach
+                    @else
+                        <li class="filter-btn btn-secondary">Any</li>
+                    @endif
+                </ul>
+
+                <section class="review-container">
+                    @if ($location->findReviews != "[]")
+                        <p class="slideShowUp">{{$location->findReviews->first()->review}}</p>
+                    @else
+                        <p>No reviews yet</p>
+                    @endif
+                </section>
+
+                <section class="owner-information">
+                    <img class="card-thumb" src="{{$location->ownedBy->media}}" alt="Owner profile">
+                    <p> {{$location->ownedBy->firstname}} {{$location->ownedBy->lastname}}</p> 
+                </section>
+            </section>
         </section>
 
     </main>
