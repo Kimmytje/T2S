@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'role',
         'firstname',
         'lastname',
         'username',
@@ -44,6 +45,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * @param string $role
+     * @return bool
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->getAttribute('role') === $role;
+    }
+    
     public function myAnimals(){
         return $this->hasMany('\App\Models\Animals', "owner", "id");
     }
