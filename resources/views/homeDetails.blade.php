@@ -39,7 +39,7 @@
 
                 <section class="review-container">
                     @if ($location->findReviews != "[]")
-                        <p class="slideShowUp">{{$location->findReviews->first()->review}}</p>
+                        <p class="rating">{{$location->findReviews->avg('rating')}}</p>
                     @else
                         <p>No reviews yet</p>
                     @endif
@@ -53,4 +53,18 @@
         </section>
 
     </main>
+
+    <article class="reviews-container">
+        @foreach ($location->findReviews as $review)
+            <figure class="review">
+                <figcaption>
+                    <blockquote>
+                        {{$review->review}}
+                    </blockquote>
+                    <h3></h3>
+                    <h4 class="rating">{{$review->rating}}</h4>
+                </figcaption>
+            </figure>
+        @endforeach
+    </article>
 @endsection

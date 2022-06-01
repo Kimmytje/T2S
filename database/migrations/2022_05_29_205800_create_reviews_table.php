@@ -17,6 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string("location");
             $table->longText("review");
+            $table->integer('rating');
             $table->timestamps();
 
             $table->foreign("location")->references("address")->on("location");

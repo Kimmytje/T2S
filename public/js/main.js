@@ -73,3 +73,20 @@ for (var i = 0; i < thumbnails.length; i++) {
 //     document.getElementsByClassName("slider")[0].scrollLeft += 180;
 //     console.log("Go right!");
 // })
+
+const ratingElement = document.getElementsByClassName("rating");
+const stars = parseInt(ratingElement[0].innerHTML);
+const newItem = document.createElement('section');
+
+newItem.classList.add('stars');
+const Inner = '<label class="rate"><input type="radio" name="radio1" id="star1" value="star1"><i class="fa fa-star star one-star"></i></label>';
+
+for (var i = 0; i < ratingElement.length; i++) {
+    console.log(ratingElement[i]);
+    var newInner = '';
+    for (var j = 0; j < stars; j++) {
+        newInner = newInner + Inner;
+    }
+    newItem.innerHTML = newInner;
+    ratingElement[i].appendChild(newItem);
+}
