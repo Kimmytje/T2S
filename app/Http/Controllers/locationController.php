@@ -23,4 +23,18 @@ class LocationController extends Controller
             'allMedia' => $allMedia,
         ]);
     }
+
+    public function showContact($address){
+        $user = Auth::user();
+
+        $address = str_replace("%20", "", $address);
+        $location = Location::where('address', $address)->first();
+
+        return view('contactForm', [
+            'user' => $user,
+
+            'address' => $address,
+            'location' => $location,
+        ]);
+    }
 }

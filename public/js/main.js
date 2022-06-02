@@ -1,8 +1,19 @@
+window.welcomeCheck = function(){
+    var onWelcomePage = false;
+    if (document.location.pathname === "/") {
+        onWelcomePage = true;;
+    }
+    return onWelcomePage;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    var listOfColors = ["color-scheme-1", "color-scheme-2", "color-scheme-3"];
-    var randomNum = Math.floor(Math.random() * listOfColors.length);
-    document.getElementsByClassName("area")[0].classList.add("color-scheme-" + (randomNum + 1));
+    if (window.welcomeCheck()) {  
+            var listOfColors = ["color-scheme-1", "color-scheme-2", "color-scheme-3"];
+            var randomNum = Math.floor(Math.random() * listOfColors.length);
+            document.getElementsByClassName("area")[0].classList.add("color-scheme-" + (randomNum + 1));
+    }
 });
+
 
 let shownCategories = [];
 
@@ -35,8 +46,6 @@ const filter = () => {
             card.style.display = "";
         });
     }
-
-    console.log(shownCategories);
 }
 
 document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
@@ -45,9 +54,6 @@ document.querySelectorAll("input[type=checkbox]").forEach(checkbox => {
 
 let thumbnails = document.getElementsByClassName("thumbnail")
 let activeImages = document.getElementsByClassName("thumbnail-active")
-
-console.log(thumbnails);
-console.log(activeImages);
 
 for (var i = 0; i < thumbnails.length; i++) {
     thumbnails[i].addEventListener("mouseover", function () {
@@ -74,19 +80,43 @@ for (var i = 0; i < thumbnails.length; i++) {
 //     console.log("Go right!");
 // })
 
-const ratingElement = document.getElementsByClassName("rating");
-const stars = parseInt(ratingElement[0].innerHTML);
-const newItem = document.createElement('section');
-
-newItem.classList.add('stars');
-const Inner = '<label class="rate"><input type="radio" name="radio1" id="star1" value="star1"><i class="fa fa-star star one-star"></i></label>';
-
-for (var i = 0; i < ratingElement.length; i++) {
-    console.log(ratingElement[i]);
-    var newInner = '';
-    for (var j = 0; j < stars; j++) {
-        newInner = newInner + Inner;
+window.locationCheck = function(){
+    var onLocationPage = false;
+    if (document.location.href.indexOf("location") > -1) {
+        onLocationPage = true;
     }
-    newItem.innerHTML = newInner;
-    ratingElement[i].appendChild(newItem);
+    return onLocationPage;
+}
+
+if (window.locationCheck()) {
+    document.getElementsByTagName('body')[0].style.overflowY = 'hidden';
+    document.getElementsByTagName('body')[0].style.height = '100vh';
+    
+    const ratingElement = document.getElementsByClassName("rating");
+
+    const Inner = '<label class="rate" onclick="scrollToReviews()"><input type="radio" name="radio1" id="star1" value="star1"><i class="fa fa-star star one-star"></i></label>';
+
+    for (var i = 0; i < ratingElement.length; i) {
+        const newItem = document.createElement('section');
+        newItem.classList.add('stars');
+
+        var parent = ratingElement[i].parentNode;
+        var stars = parseInt(ratingElement[i].innerHTML);
+        var newInner = '';
+        
+        for (var j = 0; j < stars; j++) {
+            newInner = newInner + Inner;
+        }
+        
+        newItem.innerHTML = newInner;
+        parent.appendChild(newItem);
+        parent.removeChild(ratingElement[i]);
+    }
+
+}
+
+function scrollToReviews(){
+    console.log('Click');
+    const scrollTo = document.getElementsByClassName('reviews-container');
+    scrollTo[0].scrollIntoView({behavior: "smooth"});
 }

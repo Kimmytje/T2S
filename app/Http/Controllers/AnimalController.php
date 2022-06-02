@@ -27,4 +27,21 @@ class AnimalController extends Controller
             'allMedia' => $allMedia,
         ]);
     }
+
+    public function showContact($id){
+        $user = Auth::user();
+
+        $search = Searching::where('id', $id)->first();
+
+        $animal = $search->searchingFor()->first();
+
+
+        return view('contactForm', [
+            'user' => $user,
+
+            'id' => $id,
+            'search' => $search,
+            'animal' => $animal,
+        ]);
+    }
 }

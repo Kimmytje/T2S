@@ -33,6 +33,8 @@ html {
 
     box-sizing: inherit;
 
+    scroll-behavior: smooth;
+
     /* 1rem = 10px */
 }
 
@@ -47,7 +49,13 @@ body {
     max-width: 100vw;
     min-height: 100vh;
 
-    background: var(--Yellow);
+    color: #2A293E;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2044837-jpeg.jpg") center center no-repeat;
+    background-color: var(--Yellow);
+    background-size: cover;
+
+    justify-items: center;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -78,6 +86,27 @@ header::before {
 main {
     width: 90%;
     padding: 4rem;
+}
+
+.top {
+    font-family: sans-serif;
+
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+
+    margin-top: calc(100vh + var( --offset) );
+    padding: 1rem;
+
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: #fff;
+    border-radius: 10rem;
+    background: #000;
+
+    --offset: 5rem;
+    place-self: end;
 }
 
 /* ----------- Navigation ----------- */
@@ -301,6 +330,16 @@ nav > ul > li > a::before {
     color: white;
     border: 0;
     background-color: rgba(var( --Purple) , 1);
+}
+
+.botmid {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+
+    width: 20rem;
+
+    transform: translateX(-50%);
 }
 
 /* ----------- Searching Cards ----------- */
@@ -707,7 +746,7 @@ h6 {
 .house,
 .animal {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -874,8 +913,12 @@ h6 {
 }
 
 .reviews-container {
-    width: 100vh;
+    position: absolute;
+    top: 100vh;
+
+    width: 100vw;
     height: 100vh;
+    padding: 4rem;
 }
 
 .review {
@@ -1106,6 +1149,112 @@ h6 {
 
 .rate:hover .face {
     opacity: 1;
+}
+
+/* ----------- Contact Form ----------- */
+
+.contact-us {
+    padding: 50px 100px;
+
+    border-top: 10px solid #f45702;
+    background: #f8f4e5;
+}
+
+.contact-us > label,
+.contact-us > input,
+.contact-us > textarea {
+    font-family: "Spartan";
+    font-size: 12pt;
+    line-height: 24pt;
+
+    display: block;
+
+    width: 100%;
+}
+
+.contact-us > input {
+    margin-bottom: 24pt;
+}
+
+.contact-us > h3 {
+    font-size: 10pt;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 24pt;
+
+    margin: 0 0 0.5em 0;
+}
+
+.contact-us > span {
+    font-size: 8pt;
+}
+
+.contact-us > em {
+    font-weight: bold;
+
+    color: #f45702;
+}
+
+input,
+textarea {
+    padding-left: 5px;
+
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    outline: none;
+    background: #f8f4e5;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #6bd4b1;
+}
+
+textarea {
+    resize: none;
+}
+
+.contact-us > button {
+    line-height: 24pt;
+
+    display: block;
+    float: right;
+
+    padding: 0 20px;
+
+    transition: 0.2s all ease-in-out;
+    letter-spacing: 2px;
+
+    color: white;
+    border: none;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    background: #f45702;
+}
+
+.contact-us > button:hover {
+    color: #f45702;
+    border-bottom: 2px solid #f45702;
+    background: inherit;
+}
+
+.contact-us > ::selection {
+    background: #ffc7b8;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+
+    border: 1px solid #6bd4b1;
+    -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+
+    -webkit-text-fill-color: #2A293E;
 }
 
 /* ----------- Try at responsive ----------- */

@@ -20,6 +20,9 @@ Route::middleware(['auth'])-> group(function() {
 
     Route::get('/location/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
     Route::get('/searching/{id}', [\App\Http\Controllers\AnimalController::class, 'showSpecific']);
+
+    Route::get('/location/{address}/contact', [\App\Http\Controllers\LocationController::class, 'showContact']);
+    Route::get('/searching/{id}/contact', [\App\Http\Controllers\AnimalController::class, 'showContact']);
 });
 
 Route::get('/', function () {

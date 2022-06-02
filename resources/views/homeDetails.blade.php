@@ -19,9 +19,9 @@
                 <h1>{{$address}}</h1>
                 <h4>{{$location->city}}</h4>
 
-                <button class="btn btn-primary">
+                <a href="/location/{{$address}}/contact" class="btn btn-primary">
                     Maak afspraak!
-                </button>
+                </a>
             </section>
 
             <section class="house-informationR">
@@ -52,19 +52,24 @@
             </section>
         </section>
 
-    </main>
+        <article class="reviews-container">
+            @foreach ($location->findReviews as $review)
+                <figure class="review">
+                    <figcaption>
+                        <blockquote>
+                            {{$review->review}}
+                        </blockquote>
+                        <h3></h3>
+                        <h4 class="rating">{{$review->rating}}</h4>
+                    </figcaption>
+                </figure>
+            @endforeach
 
-    <article class="reviews-container">
-        @foreach ($location->findReviews as $review)
-            <figure class="review">
-                <figcaption>
-                    <blockquote>
-                        {{$review->review}}
-                    </blockquote>
-                    <h3></h3>
-                    <h4 class="rating">{{$review->rating}}</h4>
-                </figcaption>
-            </figure>
-        @endforeach
-    </article>
+            <a href="/location/{{$address}}/addReview" class="btn btn-primary botmid">Add your review</a>
+
+            <a href="#" class="top">Back to Top &#8593;</a>
+
+        </article>
+
+    </main>
 @endsection

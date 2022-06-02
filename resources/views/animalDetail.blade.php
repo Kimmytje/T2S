@@ -23,9 +23,9 @@
                 <p><span class="material-icons">sell</span> €{{$search->payment}}.-</p>
 
 
-                <button class="btn btn-primary">
+                <a href="/searching/{{$search->id}}/contact" class="btn btn-primary">
                     Pas op {{$animal->name}}!
-                </button>
+                </a>
             </section>
 
             <section class="animal-informationR">
