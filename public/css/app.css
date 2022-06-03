@@ -1,3 +1,137 @@
+/* Admin */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+
+.review-container {
+  width: 90%;
+  padding: 4rem;
+}
+
+.review-list {
+  display: grid;
+
+  margin: 4rem 0;
+  margin-bottom: 7rem;
+  padding: 0;
+
+  list-style-type: none;
+
+  grid-template-columns: repeat(auto-fit, 50rem);
+  gap: 2rem;
+}
+
+.simple-card {
+  font-size: 16px;
+
+  position: relative;
+
+  display: inline-block;
+  overflow: hidden;
+
+  width: 100%;
+  min-width: 250px;
+  max-width: 510px;
+  height: 15rem;
+  margin: 35px 10px 10px;
+
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 20px;
+  background: #f2f2f2;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+.simple-card-content {
+  position: absolute;
+  top: 50%;
+
+  padding: 40px;
+
+  transform: translatey(-50%);
+  text-align: justify;
+
+  color: black;
+}
+
+.simple-card-content h3 {
+  font-weight: 900;
+
+  text-align: center;
+}
+
+.simple-card-content p {
+  font-weight: 300;
+}
+
+/* delete-btn button styling */
+
+.delete-btn {
+  font-family: inherit;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  font-weight: 200;
+
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 20px;
+
+  padding: 7px 30px 7px;
+
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  outline: 1px solid black;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.delete-btn i {
+  font-size: 13px;
+
+  position: absolute;
+  top: 14px;
+  right: 10px;
+
+  transition: transform 1;
+  transition: 0.2s;
+
+  opacity: 0;
+}
+
+.delete-btn p {
+  transition: transform 0.8s;
+}
+
+.delete-btn:hover p {
+  transform: translateX(-6px);
+}
+
+.delete-btn::after {
+  position: absolute;
+  z-index: -1;
+  top: 7px;
+  left: 7px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+
+  opacity: .5;
+  background-color: #FD6066;
+}
+
+.delete-btn:hover i {
+  transform: translateX(-6px);
+
+  opacity: 1;
+}
+
+/* End of delete-btn Button */
 // tailwindcss.com */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)

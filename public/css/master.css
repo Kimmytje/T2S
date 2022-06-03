@@ -1153,51 +1153,63 @@ h6 {
 
 /* ----------- Contact Form ----------- */
 
-.contact-us {
-    padding: 50px 100px;
+.form {
+    font-size: 1.8rem;
 
-    border-top: 10px solid #f45702;
+    display: grid;
+    align-items: center;
+
+    justify-items: center;
+}
+
+.contact {
+    padding: 5rem 10rem;
+
+    border-top: 1rem solid #f45702;
     background: #f8f4e5;
 }
 
-.contact-us > label,
-.contact-us > input,
-.contact-us > textarea {
-    font-family: "Spartan";
-    font-size: 12pt;
-    line-height: 24pt;
+.form label,
+.form input,
+.form textarea {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
 
     display: block;
 
     width: 100%;
 }
 
-.contact-us > input {
-    margin-bottom: 24pt;
+.form input {
+    margin-bottom: 2.4rem;
 }
 
-.contact-us > h3 {
-    font-size: 10pt;
+.form textarea {
+    margin-bottom: 1.5rem;
+}
+
+.form h3 {
+    font-size: 1rem;
     font-weight: normal;
     font-style: italic;
-    line-height: 24pt;
+    line-height: 2.4rem;
 
     margin: 0 0 0.5em 0;
 }
 
-.contact-us > span {
-    font-size: 8pt;
+.form span {
+    font-size: 1.2rem;
 }
 
-.contact-us > em {
+.form em {
     font-weight: bold;
 
     color: #f45702;
 }
 
-input,
-textarea {
-    padding-left: 5px;
+.form input,
+.form textarea {
+    padding-left: .5rem;
 
     border: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1206,22 +1218,22 @@ textarea {
     background: #f8f4e5;
 }
 
-input:focus,
-textarea:focus {
+.form input:focus,
+.form textarea:focus {
     border: 1px solid #6bd4b1;
 }
 
-textarea {
+.form textarea {
     resize: none;
 }
 
-.contact-us > button {
-    line-height: 24pt;
+.form button {
+    line-height: 2.4rem;
 
     display: block;
     float: right;
 
-    padding: 0 20px;
+    padding: 0 2rem;
 
     transition: 0.2s all ease-in-out;
     letter-spacing: 2px;
@@ -1233,13 +1245,13 @@ textarea {
     background: #f45702;
 }
 
-.contact-us > button:hover {
+.form button:hover {
     color: #f45702;
     border-bottom: 2px solid #f45702;
     background: inherit;
 }
 
-.contact-us > ::selection {
+.form ::selection {
     background: #ffc7b8;
 }
 

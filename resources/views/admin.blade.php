@@ -5,7 +5,12 @@
         </h2>
     </x-slot>
 
-    <section class="reviews-list">
-        
-    </section>
+    <article class="review-container">
+        <section class="reviews-list">
+            @include('./components/review-cards')
+            @include('./components/review-cards')
+            @include('./components/review-cards')
+        </section>
+    </article>
+    
 </x-app-layout>

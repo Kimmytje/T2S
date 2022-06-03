@@ -26,11 +26,11 @@
                                     <img src="{{$user->media}}" alt="User profile"  class="avatar">
                                 </figure>
                             </li>
-                            <li><a href="#"> My Account </a></li>
-                            <li><a href="#"> My Animals </a></li>
-                            <li><a href="#"> My Homes </a></li>
+                            <li><a href="/myAccount"> My Account </a></li>
+                            <li><a href="/myAnimals"> My Animals </a></li>
+                            <li><a href="/myHomes"> My Homes </a></li>
                             @if ($user->role != 'user')
-                                <li><a href="/dashboard">Dashboard</a></li>
+                                <li><a href="/admin">Dashboard</a></li>
                             @endif
                         </ul>
                     </li>
