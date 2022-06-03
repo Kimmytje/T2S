@@ -12,7 +12,7 @@ class AdminController extends Controller
         $locations = Location::all();
         $user = Auth::user();
 
-        return $locations;
+        return $locations; //Dit skipt ie dus hij komt niet in deze controller terecht, krijg wel laravel errors als ik iet van een foreach loop erin wil zetten met deze var
 
         return view('admin', [
             'locations' => $locations,

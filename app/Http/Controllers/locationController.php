@@ -30,6 +30,8 @@ class LocationController extends Controller
         $address = str_replace("%20", "", $address);
         $location = Location::where('address', $address)->first();
 
+        return $location; //Zelfde hier en dit geeft een 404 pagina
+
         return view('form', [
             'user' => $user,
 

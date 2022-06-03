@@ -35,6 +35,7 @@ class AnimalController extends Controller
 
         $animal = $search->searchingFor()->first();
 
+        return $search; //Zelfde hier en dit geeft een 404 pagina
 
         return view('form', [
             'user' => $user,
