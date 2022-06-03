@@ -25,6 +25,10 @@ Route::middleware(['auth'])-> group(function() {
     Route::get('/searching/{id}/contact', [\App\Http\Controllers\AnimalController::class, 'showContact']);
 });
 
+Route::middleware(['auth', 'admin'])-> group(function() {
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'show']);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
