@@ -30,7 +30,7 @@ class LocationController extends Controller
         $address = str_replace("%20", "", $address);
         $location = Location::where('address', $address)->first();
 
-        return view('contactForm', [
+        return view('form', [
             'user' => $user,
 
             'address' => $address,
