@@ -23,9 +23,7 @@ Route::middleware(['auth'])-> group(function() {
 });
 
 Route::middleware(['auth', 'admin'])-> group(function() {
-    Route::get('/admin', function () {
-        return view('admin');
-    });
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'show']);
 });
 
 
