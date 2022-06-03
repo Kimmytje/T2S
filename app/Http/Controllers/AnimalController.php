@@ -36,7 +36,7 @@ class AnimalController extends Controller
         $animal = $search->searchingFor()->first();
 
 
-        return view('contactForm', [
+        return view('form', [
             'user' => $user,
 
             'id' => $id,

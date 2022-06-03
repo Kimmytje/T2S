@@ -21,12 +21,13 @@ Route::middleware(['auth'])-> group(function() {
     Route::get('/location/{address}', [\App\Http\Controllers\LocationController::class, 'showSpecific']);
     Route::get('/searching/{id}', [\App\Http\Controllers\AnimalController::class, 'showSpecific']);
 
-    Route::get('/location/{address}/contact', [\App\Http\Controllers\LocationController::class, 'showContact']);
-    Route::get('/searching/{id}/contact', [\App\Http\Controllers\AnimalController::class, 'showContact']);
+    Route::get('/location/{address}/contact', [\App\Http\Controllers\LocationController::class, 'showContact']); //Deze wilt niet werken
+    Route::get('/searching/{id}/contact', [\App\Http\Controllers\AnimalController::class, 'showContact']); //Deze wilt niet werken
 });
 
 Route::middleware(['auth', 'admin'])-> group(function() {
-    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'show']);
+    //En deze wilt niet werken (hier kom ik echter wel op de view, maar geen variabelen/functies??)
+    Route::get('/admin', [App\Http\Controllers\AdminController::class, 'show']); 
 });
 
 Route::get('/', function () {

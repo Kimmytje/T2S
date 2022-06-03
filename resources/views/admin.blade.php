@@ -6,6 +6,5 @@
     </x-slot>
 
     <section class="reviews-list">
-        
     </section>
 </x-app-layout>
